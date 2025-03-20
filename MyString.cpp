@@ -98,72 +98,30 @@ char* MyString::GetStr()
 
 bool operator<(const MyString& left, const MyString& right)
 {
-	if (left.str < right.str)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return left.size < right.size;
 }
 
 bool operator>(const MyString& left, const MyString& right)
 {
-	if (left.str > right.str)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return left.str > right.str;
 }
 
 bool operator<=(const MyString& left, const MyString& right)
 {
-	if (left.str <= right.str)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return left.size <= right.size;
 }
 
 bool operator>=(const MyString& left, const MyString& right)
 {
-	if (left.str >= right.str)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return left.size >= right.size;
 }
 
 bool operator==(const MyString& left, const MyString& right)
 {
-	if (left.str == right.str)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return left.size == right.size;
 }
 
 bool operator!=(const MyString& left, const MyString& right)
 {
-	if (left.str != right.str)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return left.size != right.size;
 }

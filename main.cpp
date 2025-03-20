@@ -2,9 +2,9 @@
 
 int main()
 {
-	MyString one(10), two(10);
+	MyString one("uh"), two("j");
 
-	bool eee = one < two;
+	bool eee = one <= two;
 	std::cout << eee;
 
 	return 0;
