@@ -29,7 +29,17 @@ public:
 	friend bool operator==(const MyString& left, const MyString& right);
 	friend bool operator!=(const MyString& left, const MyString& right);
 
-	char* GetStr();
+	const char* GetStr();
+
+	int Size();
+	void Resize();
+	void Clear();
+	bool Empty();
+	void Push_back(const char& obj);
+	void Print() const;
+	
+
+	
 
 private:
 	char* str = nullptr;

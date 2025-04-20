@@ -91,9 +91,38 @@ MyString& MyString::operator+=(const char* word)
 	return *this;
 }
 
-char* MyString::GetStr()
+const char* MyString::GetStr()
 {
 	return this->str;
+}
+
+int MyString::Size()
+{
+	return this->size;
+}
+
+void MyString::Clear()
+{
+	delete[] this->str;
+	this->str = nullptr;
+	this->size = 0;
+}
+
+bool MyString::Empty()
+{
+	return this->str == nullptr || this->size == 0;
+}
+
+void MyString::Print() const
+{
+	if (this->str != nullptr)
+	{
+		std::cout << str << std::endl;
+	}
+	else
+	{
+		std::cout << "Пусто." << std:: endl;
+	}
 }
 
 bool operator<(const MyString& left, const MyString& right)
