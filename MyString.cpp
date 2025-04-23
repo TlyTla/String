@@ -101,6 +101,33 @@ int MyString::Size()
 	return this->size;
 }
 
+void MyString::Resize(unsigned int size)
+{
+	char* newStr = new char[size + 1];
+	if (this->str) 
+	{
+		unsigned int copySize;
+		if (size < this->size)
+		{
+			copySize = size;
+		}
+		else
+		{
+			copySize = this->size;
+		}
+
+		std::memcpy(newStr, this->str, copySize);
+		newStr[copySize] = '\0';
+	}
+	else {
+		newStr[0] = '\0';
+	}
+
+	delete[] this->str;
+	this->str = newStr;
+	this->size = size;
+}
+
 void MyString::Clear()
 {
 	delete[] this->str;
@@ -111,6 +138,21 @@ void MyString::Clear()
 bool MyString::Empty()
 {
 	return this->str == nullptr || this->size == 0;
+}
+
+void MyString::Push_back(const char& obj)
+{
+	char* newStr = new char[size + 2];
+	if (this->str) 
+	{
+		std::memcpy(newStr, this->str, size);
+	}
+	newStr[size] = obj;
+	newStr[size + 1] = '\0';
+
+	delete[] this->str;
+	this->str = newStr;
+	size++;
 }
 
 void MyString::Print() const

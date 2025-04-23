@@ -32,7 +32,7 @@ public:
 	const char* GetStr();
 
 	int Size();
-	void Resize();
+	void Resize(unsigned int obj);
 	void Clear();
 	bool Empty();
 	void Push_back(const char& obj);
